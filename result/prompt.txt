@@ -1,0 +1,16 @@
+berdasarkan master resume yang saya kirim, tugas kamu: 
+
+- buatkan cv berbasis teks untuk saya copy-paste ke cv builder dengan ukuran A4 maksimal 1 halaman  
+- berbahasa inggris atau indonesia? terserah kamu 
+- buatkan section 'Core Skills' yang sangat detail dan komprehensif dengan menerapkan aturan berikut: Bagi menjadi tepat 3 kategori: Frontend, Backend & Systems, dan Tools & Practices. Jangan hanya mengambil skill dari section 'Technologies'. Ekstrak juga kemampuan teknis spesifik yang tersembunyi di dalam deskripsi 'Professional Experience', 'Internship', dan 'Projects' (seperti: WebSockets, Local Storage, Reusable Components, Responsive Design, Database Structure Design, Code Review, Testing, Debugging, Vercel CI/CD). Tuliskan setiap kategori dalam satu baris memanjang (inline) yang dipisahkan oleh koma. Pastikan output akhirnya ringkas, padat, dan maksimal terdiri dari 3 atau 4 baris teks tanpa menggunakan format bullet point yang memakan banyak ruang vertikal.
+- pada section pengalaman kerja, setiap pengalaman kerja maksimal 3 point dengan setiap point maksimal 3 baris, dengan tetap menjelaskan seluruh detail dari setiap pengalaman kerja menggunakan kalimat yang ringkas dan to the point 
+- jika melampirkan internship pada pengalaman kerja, maksimal 2 point dengan setiap point maksimal 3 baris, dengan tetap menjelaskan seluruh detail dari setiap pengalaman internship menggunakan kalimat yang ringkas dan to the point 
+- dalam cv yang kamu buat, gunakan keyword yang relevan dengan job description 
+- pada section personal summary maksimal 3 baris, dengan tetap menjelaskan seluruh pengalaman, kelebihan dan skill saya menggunakan kalimat yang ringkas dan to the point 
+- tambahkan section "Projects" yang merangkum portofolio/kapabilitas proyek saya menjadi tepat 3 bullet points:
+  1. Poin 1: Rangkuman jenis platform/sistem yang pernah dikembangkan (ambil dari section "Types of Projects").
+  2. Poin 2: Rangkuman kapabilitas teknis inti seperti REST API integration, database, maintenance, testing, dan dokumentasi (ambil dari "Areas of Expertise").
+  3. Poin 3: Rangkuman kemampuan pendukung hardware, OS, dan setup periferal (ambil dari "Hardware & IT Support Knowledge").
+  Tulis dalam kalimat lampau/action verb yang ringkas, profesional, dan to the point.
+
+jika ada yang ingin kamu tanyakan, tanyakan saja agar tidak ada salah paham

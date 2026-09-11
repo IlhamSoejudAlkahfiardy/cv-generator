@@ -1,0 +1,66 @@
+Berikut adalah teks CV yang dirancang khusus untuk di-copy-paste ke CV builder (maksimal setara 1 halaman A4), menggunakan bahasa Indonesia yang profesional, ringkas, dan disesuaikan dengan kata kunci dari deskripsi pekerjaan (Web Developer - Laravel, Tailwind CSS, Git, SEO, dll).
+
+Ilham Soejud Alkahfiardy
+Web Developer
+08983474756 | ilhamyusuf386@gmail.com | Malang, Jawa Timur
+LinkedIn: linkedin.com/in/ilhamsoejudalkahfiardy | GitHub: github.com/IlhamSoejudAlkahfiardy | Portfolio: alkahfiardy.com
+
+Personal Summary
+Web Developer (IPK 3.95) dengan pengalaman 1,5+ tahun membangun aplikasi SaaS, dashboard, dan company profile yang responsif. Menguasai Laravel, Tailwind CSS, React, dan ekosistem Git, serta berpengalaman dalam optimasi SEO, manajemen aset/gambar, integrasi API, dan perancangan database. Terbiasa bekerja dalam tim Agile untuk merancang dan memelihara solusi digital berkinerja tinggi yang selaras dengan target bisnis.
+
+Core Skills
+Frontend: Tailwind CSS, React.js, Next.js, Bootstrap, JavaScript, TypeScript, Responsive Design, State Management, UI/UX Implementation, Pagination, Reusable Components.
+Backend & Systems: Laravel, CodeIgniter, PHP, MySQL, PostgreSQL, REST API Integration, Database Structure Design, WebSockets, User Permissions, Asset Optimization.
+Tools & Practices: Git, GitHub, GitLab, Vercel CI/CD, SEO Optimization, Local Storage Management, Testing, Debugging, Code Review, Agile, Technical Documentation.
+
+Professional Experience
+
+PT Aero Group Indonesia | Front-End Developer (Oct 2024 – Jun 2026)
+
+Mengembangkan aplikasi SaaS dan dashboard analitik menggunakan Tailwind CSS dan Next.js yang terintegrasi dengan REST API untuk produktivitas tim marketing.
+
+Mengimplementasikan fitur pengolahan data masif, manipulasi aset video/gambar, metrics real-time, dan ekspor data dengan antarmuka yang sangat responsif.
+
+Mengelola workflow pengembangan melalui Git, code review, debugging, dan implementasi pipeline CI/CD via Vercel untuk otomatisasi rilis production.
+
+Elecomp Indonesia | Full-Stack Web Developer (Mar 2024 – Apr 2024)
+
+Membangun dan memelihara website company profile yang dinamis menggunakan framework berbasis PHP (CodeIgniter) dan manajemen database MySQL.
+
+Menerapkan strategi optimasi SEO pada struktur website untuk meningkatkan visibilitas organik perusahaan pada mesin pencari secara efektif.
+
+Menyelesaikan isu teknis melalui debugging berkala, optimasi performa pemuatan halaman, dan penyusunan dokumentasi teknis untuk kemudahan operasional.
+
+Internship Experience
+
+DOT Indonesia | Front-End Engineer Intern (Jul 2026 – Present)
+
+Membangun fitur enterprise pada sistem manajemen penggajian dengan implementasi user permissions, sinkronisasi data, dan struktur reusable components.
+
+Melakukan perbaikan bug, integrasi API, dan berpartisipasi aktif dalam proses code review menggunakan GitLab Merge Request dalam ekosistem Agile.
+
+PT Kinema Systrans Multimedia | Front-End Developer Intern (Aug 2023 – Dec 2023)
+
+Membangun dan menguji berbagai antarmuka aplikasi web menggunakan React.js dan Tailwind CSS yang terhubung langsung dengan layanan RESTful API.
+
+Menyusun dokumentasi teknis yang komprehensif dan berkolaborasi erat dengan tim desainer UI/UX untuk memastikan kesesuaian produk akhir.
+
+MejaKita Edunusa Mandiri | Back End Developer Intern (Jul 2020 – Dec 2020)
+
+Mengembangkan platform web e-learning menggunakan framework PHP, jQuery, dan MySQL yang disesuaikan dengan kebutuhan interaksi pengguna.
+
+Merancang struktur relasi database secara efisien dan melakukan fase testing untuk memastikan seluruh fitur berjalan tanpa kendala di sisi server.
+
+Projects
+
+Mengembangkan berbagai jenis platform dan sistem digital, termasuk platform SaaS, analytics dashboard, sistem manajemen afiliasi, hingga company profile.
+
+Mengimplementasikan kapabilitas teknis inti yang berfokus pada integrasi REST API, manajemen database, pemeliharaan software, pengujian, dan dokumentasi.
+
+Mengelola dukungan infrastruktur fisik dan sistem melalui instalasi OS/software, konfigurasi driver, serta setup dan troubleshooting perangkat periferal.
+
+Education
+
+S1 Sistem Informasi - Universitas Terbuka Malang (IPK 3.56/4.00)
+
+D3 Sistem Informasi - Universitas Merdeka Malang (IPK 3.95/4.00) - Runner-up Lulusan Terbaik Fakultas Teknologi Informasi (2024)
