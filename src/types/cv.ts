@@ -3,10 +3,12 @@ export interface GenerateCvPayload {
   use_photo: boolean;
   custom_role?: string;
   target_phone: string;
+  master_resume?: string;
 }
 
 export interface GenerateCvResponse {
   role_title?: string;
+  candidate_name?: string;
   pdf_base64?: string;
   pdf_filename?: string;
 }

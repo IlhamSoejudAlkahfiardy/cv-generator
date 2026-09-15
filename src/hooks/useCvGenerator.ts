@@ -113,7 +113,8 @@ export function useCvGenerator() {
 
       const roleTitle = data.role_title || 'Resume';
       const cleanRole = roleTitle.replace(/[^a-zA-Z0-9]/g, '_');
-      const filename = data.pdf_filename || `CV_Ilham_Soejud_${cleanRole}.pdf`;
+      const cleanName = (data.candidate_name || 'Ilham_Soejud').replace(/[^a-zA-Z0-9]/g, '_');
+      const filename = data.pdf_filename || `CV_${cleanName}_${cleanRole}.pdf`;
       const pdfBase64 = data.pdf_base64 && data.pdf_base64.length > 50 ? data.pdf_base64 : null;
 
       setResult({
