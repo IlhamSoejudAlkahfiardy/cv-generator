@@ -138,9 +138,9 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
   const activeResumeContent = resumeMode === 'custom' ? customResumeText : defaultMasterResume;
 
   return (
-    <section className="card">
-      <div className="card-title">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <section className="bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 sm:p-7 shadow-2xl shadow-indigo-950/20 hover:border-white/15 transition-all">
+      <div className="flex items-center gap-2.5 text-base sm:text-lg font-bold text-white mb-6">
+        <svg className="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -153,21 +153,25 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
 
       <form onSubmit={handleSubmit}>
         {/* 1. Master Resume Section */}
-        <div className="form-group master-resume-section">
-          <div className="label-row">
-            <label>Sumber Master Resume</label>
-            <span className="badge-pill">
+        <div className="bg-slate-800/40 border border-white/10 rounded-xl p-4 sm:p-5 mb-6">
+          <div className="flex justify-between items-center mb-3">
+            <label className="text-xs sm:text-sm font-semibold text-slate-200">Sumber Master Resume</label>
+            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
               {resumeMode === 'custom' ? '✨ Custom Resume Aktif' : 'Default (Ilham Soejud)'}
             </span>
           </div>
 
-          <div className="resume-mode-selector">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-3">
             <button
               type="button"
-              className={`mode-btn ${resumeMode === 'default' ? 'active' : ''}`}
+              className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold cursor-pointer transition-all duration-200 ${
+                resumeMode === 'default'
+                  ? 'bg-indigo-600/20 text-indigo-300 border border-indigo-500/50 shadow-md shadow-indigo-500/20'
+                  : 'bg-slate-900/60 text-slate-400 border border-white/5 hover:bg-slate-800 hover:text-slate-200 hover:border-white/15'
+              }`}
               onClick={handleResetToDefault}
             >
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -180,7 +184,11 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
 
             <button
               type="button"
-              className={`mode-btn ${resumeMode === 'custom' ? 'active' : ''}`}
+              className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold cursor-pointer transition-all duration-200 ${
+                resumeMode === 'custom'
+                  ? 'bg-indigo-600/20 text-indigo-300 border border-indigo-500/50 shadow-md shadow-indigo-500/20'
+                  : 'bg-slate-900/60 text-slate-400 border border-white/5 hover:bg-slate-800 hover:text-slate-200 hover:border-white/15'
+              }`}
               onClick={() => {
                 setResumeMode('custom');
                 if (!uploadedFileName && fileInputRef.current) {
@@ -188,7 +196,7 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
                 }
               }}
             >
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -205,13 +213,17 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
             ref={fileInputRef}
             onChange={handleFileChange}
             accept=".md,.txt,.markdown,text/plain,text/markdown"
-            style={{ display: 'none' }}
+            className="hidden"
           />
 
           {resumeMode === 'custom' && (
             <div
-              className={`upload-dropzone ${isDragging ? 'dragging' : ''} ${
-                uploadedFileName ? 'has-file' : ''
+              className={`mt-2.5 mb-3 p-4 sm:p-5 rounded-xl text-center cursor-pointer transition-all duration-200 border-2 ${
+                uploadedFileName
+                  ? 'border-solid border-emerald-500/40 bg-emerald-500/5'
+                  : isDragging
+                  ? 'border-dashed border-indigo-400 bg-indigo-500/15 scale-[1.01]'
+                  : 'border-dashed border-indigo-500/30 bg-slate-900/40 hover:border-indigo-400 hover:bg-indigo-500/10 hover:scale-[1.005]'
               }`}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
@@ -219,9 +231,9 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
               onClick={() => fileInputRef.current?.click()}
             >
               {uploadedFileName ? (
-                <div className="file-info-bar">
-                  <div className="file-icon">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-3 text-left">
+                  <div className="w-9 h-9 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -230,16 +242,16 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
                       />
                     </svg>
                   </div>
-                  <div className="file-details">
-                    <span className="file-name">{uploadedFileName}</span>
-                    <span className="file-meta">
+                  <div className="flex-1 min-w-0">
+                    <span className="block text-xs font-semibold text-slate-200 truncate">{uploadedFileName}</span>
+                    <span className="block text-[11px] text-slate-400 mt-0.5">
                       {uploadedFileSize} • {customResumeText.length} karakter
                     </span>
                   </div>
-                  <div className="file-actions" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex items-center gap-1.5 shrink-0" onClick={(e) => e.stopPropagation()}>
                     <button
                       type="button"
-                      className="btn-text-action"
+                      className="px-2.5 py-1 rounded-md text-xs font-semibold bg-white/10 text-slate-200 hover:bg-white/20 transition-all cursor-pointer"
                       onClick={() => fileInputRef.current?.click()}
                       title="Ganti file"
                     >
@@ -247,7 +259,7 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
                     </button>
                     <button
                       type="button"
-                      className="btn-text-action danger"
+                      className="px-2.5 py-1 rounded-md text-xs font-semibold bg-rose-500/15 text-rose-400 hover:bg-rose-500/25 transition-all cursor-pointer"
                       onClick={handleResetToDefault}
                       title="Hapus dan kembali ke default"
                     >
@@ -256,8 +268,8 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
                   </div>
                 </div>
               ) : (
-                <div className="dropzone-prompt">
-                  <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex flex-col items-center py-2">
+                  <svg className="w-8 h-8 text-indigo-400/80 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -265,33 +277,30 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
                       d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                     />
                   </svg>
-                  <p className="dropzone-title">
-                    Tarik & lepaskan file <strong>.md</strong> atau <strong>.txt</strong> di sini
+                  <p className="text-xs text-slate-300">
+                    Tarik & lepaskan file <strong className="text-indigo-300">.md</strong> atau <strong className="text-indigo-300">.txt</strong> di sini
                   </p>
-                  <p className="dropzone-sub">atau klik untuk memilih file dari komputer</p>
+                  <p className="text-[11px] text-slate-500 mt-1">atau klik untuk memilih file dari komputer</p>
                 </div>
               )}
             </div>
           )}
 
           {/* Collapsible Resume Preview */}
-          <div className="resume-preview-wrapper">
+          <div className="mt-2 pt-2 border-t border-white/5">
             <button
               type="button"
-              className="preview-toggle-btn"
+              className="w-full flex justify-between items-center text-xs font-medium text-slate-400 hover:text-slate-200 py-1.5 px-1 rounded transition-colors cursor-pointer"
               onClick={() => setIsPreviewOpen((prev) => !prev)}
             >
-              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span className="flex items-center gap-1.5">
                 <svg
-                  width="14"
-                  height="14"
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    isPreviewOpen ? 'rotate-90' : 'rotate-0'
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  style={{
-                    transform: isPreviewOpen ? 'rotate(90deg)' : 'rotate(0deg)',
-                    transition: 'transform 0.2s',
-                  }}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                 </svg>
@@ -299,15 +308,15 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
                   {isPreviewOpen ? 'Sembunyikan Isi Master Resume' : 'Lihat / Sunting Isi Master Resume'}
                 </span>
               </span>
-              <span className="preview-meta-info">
+              <span className="text-[11px] text-slate-500 font-mono">
                 {activeResumeContent.length} karakter
               </span>
             </button>
 
             {isPreviewOpen && (
-              <div className="preview-content-box">
+              <div className="mt-2">
                 <textarea
-                  className="resume-textarea"
+                  className="w-full bg-slate-950/80 border border-white/10 rounded-lg p-3 text-slate-300 font-mono text-xs leading-relaxed outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-y transition-colors"
                   value={activeResumeContent}
                   onChange={(e) => {
                     setCustomResumeText(e.target.value);
@@ -326,16 +335,18 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
         </div>
 
         {/* 2. Job Description Section */}
-        <div className="form-group">
-          <div className="label-row">
-            <label htmlFor="jobDescription">Teks Job Description & Requirements *</label>
+        <div className="mb-6">
+          <div className="flex justify-between items-center mb-2">
+            <label htmlFor="jobDescription" className="text-xs sm:text-sm font-semibold text-slate-200">
+              Teks Job Description & Requirements *
+            </label>
             <button
               type="button"
-              className="quick-btn"
+              className="flex items-center gap-1 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer"
               onClick={handlePasteJob}
               title="Paste clipboard text"
             >
-              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -353,75 +364,103 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
             onChange={(e) => setJobDescription(e.target.value)}
             required
             rows={5}
+            className="w-full bg-slate-950/60 border border-white/10 rounded-xl p-3.5 text-slate-100 placeholder-slate-500 text-sm leading-relaxed outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all resize-y"
           />
-          <div className="char-count">{jobDescription.length} karakter</div>
+          <div className="text-right text-[11px] text-slate-500 mt-1 font-mono">
+            {jobDescription.length} karakter
+          </div>
         </div>
 
         {/* 3. Options Grid */}
-        <div className="options-grid">
-          <div className="form-group">
-            <label htmlFor="customRole">Role / Jabatan Target (Opsional)</label>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="customRole" className="text-xs font-semibold text-slate-300">
+              Role / Jabatan Target (Opsional)
+            </label>
             <input
               type="text"
               id="customRole"
               placeholder="Otomatis dideteksi AI (atau ketik manual)"
               value={customRole}
               onChange={(e) => setCustomRole(e.target.value)}
+              className="w-full bg-slate-950/60 border border-white/10 rounded-xl px-3.5 py-2.5 text-slate-100 placeholder-slate-500 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="targetPhone">Nomor WhatsApp Pengiriman (WAHA)</label>
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="targetPhone" className="text-xs font-semibold text-slate-300">
+              Nomor WhatsApp Pengiriman (WAHA)
+            </label>
             <input
               type="text"
               id="targetPhone"
               placeholder="Format: 628xxxxxxxx"
               value={targetPhone}
               onChange={(e) => setTargetPhone(e.target.value)}
+              className="w-full bg-slate-950/60 border border-white/10 rounded-xl px-3.5 py-2.5 text-slate-100 placeholder-slate-500 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all"
             />
           </div>
         </div>
 
         {/* 4. Photo Toggle Card */}
-        <div className="form-group">
-          <label style={{ marginBottom: '8px', display: 'block' }}>Format Visual & Foto Formal</label>
+        <div className="mb-6">
+          <label className="block text-xs font-semibold text-slate-300 mb-2">
+            Format Visual & Foto Formal
+          </label>
           <div
-            className="toggle-card"
+            className="w-full bg-slate-950/60 border border-white/10 rounded-xl p-3.5 sm:p-4 flex items-center justify-between gap-4 cursor-pointer select-none hover:border-white/20 transition-all"
             onClick={() => setUsePhoto((prev) => !prev)}
             role="button"
             tabIndex={0}
           >
-            <div className="toggle-info">
+            <div className="flex items-center gap-3.5 min-w-0">
               <img
                 src="/photos_assets.jpg"
                 alt="Foto Formal"
-                className={`toggle-photo-thumb ${!usePhoto ? 'disabled' : ''}`}
+                className={`w-10 h-12 rounded-lg object-cover border-2 transition-all duration-300 shrink-0 ${
+                  usePhoto
+                    ? 'border-emerald-400 shadow-md shadow-emerald-500/20'
+                    : 'border-slate-700 grayscale opacity-40'
+                }`}
               />
-              <div className="toggle-text">
-                <h4>Gunakan Foto Formal Jas</h4>
-                <p style={{ color: usePhoto ? '#34d399' : 'var(--text-muted)' }}>
+              <div className="min-w-0">
+                <h4 className="text-sm font-semibold text-white">Gunakan Foto Formal Jas</h4>
+                <p
+                  className={`text-xs mt-0.5 transition-colors ${
+                    usePhoto ? 'text-emerald-400 font-medium' : 'text-slate-400'
+                  }`}
+                >
                   {usePhoto
                     ? 'Aktif — Menggunakan Foto Formal (Jas & Background Merah)'
                     : 'Nonaktif — Standar ATS Modern (Tanpa Foto)'}
                 </p>
               </div>
             </div>
-            <label className="switch" onClick={(e) => e.stopPropagation()}>
-              <input
-                type="checkbox"
-                checked={usePhoto}
-                onChange={(e) => setUsePhoto(e.target.checked)}
+
+            {/* Custom Tailwind Switch */}
+            <div
+              className={`w-11 h-6 flex items-center rounded-full p-0.5 shrink-0 transition-colors duration-200 ease-in-out ${
+                usePhoto ? 'bg-emerald-500' : 'bg-slate-700'
+              }`}
+            >
+              <div
+                className={`bg-white w-5 h-5 rounded-full shadow-md transform transition-transform duration-200 ease-in-out ${
+                  usePhoto ? 'translate-x-5' : 'translate-x-0'
+                }`}
               />
-              <span className="slider"></span>
-            </label>
+            </div>
           </div>
         </div>
 
         {/* 5. Submit Button */}
-        <button type="submit" className="btn-submit" disabled={isLoading}>
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="w-full flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl font-bold text-base text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-400 hover:via-purple-400 hover:to-pink-400 active:scale-[0.99] shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer transition-all duration-200"
+        >
           {isLoading ? (
             <>
               <svg
-                className="spin-icon"
+                className="w-5 h-5 animate-spin text-white"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -439,7 +478,7 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
             </>
           ) : (
             <>
-              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -453,17 +492,21 @@ export const JobForm: React.FC<JobFormProps> = ({ onSubmit, isLoading }) => {
         </button>
       </form>
 
-      <details className="webhook-setting">
-        <summary>⚙️ Pengaturan Webhook Endpoint n8n</summary>
-        <div className="webhook-config-body">
+      {/* 6. Webhook Setting Collapsible */}
+      <details className="mt-6 pt-4 border-t border-white/10 group">
+        <summary className="text-xs text-slate-500 hover:text-slate-300 font-mono cursor-pointer select-none flex items-center gap-1.5 transition-colors">
+          ⚙️ Pengaturan Webhook Endpoint n8n
+        </summary>
+        <div className="mt-3">
           <input
             type="text"
             value={webhookUrl}
             onChange={(e) => setWebhookUrl(e.target.value)}
-            style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.8rem' }}
+            className="w-full bg-slate-950/80 border border-white/10 rounded-lg px-3 py-2 text-slate-300 font-mono text-xs outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
           />
         </div>
       </details>
     </section>
   );
 };
+
